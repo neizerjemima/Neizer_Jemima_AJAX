@@ -112,7 +112,7 @@
       materials.innerHTML=""
       materials.appendChild(materialList);
       materialList.appendChild(clone);
-    });
+    });  
     })
     .catch((error) => console.error("Oooooopppsss..... your the page did not load",error));
   }
