@@ -3,7 +3,7 @@
   //variables
   const model = document.querySelector("#model");
   const hotspots = document.querySelectorAll(".Hotspot");
-  const materials = document.querySelector(".materials")
+  const materials = document.querySelector("#materials")
   const materialTemplate = document.querySelector("#materials-template");
   const materialList = document.querySelector("#materials-list");
   const spinner = `<?xml version="1.0" encoding="utf-8"?>
