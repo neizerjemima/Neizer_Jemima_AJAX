@@ -7,35 +7,6 @@
   const materialTemplate = document.querySelector("#materials-template");
   const materialList = document.querySelector("#materials-list");
 
-  //This information needs to be removed then pulled with an AJAX Call using the Fetch API
-  //this is the api url https://swiftpixel.com/earbud/api/infoboxes"
-
-  // const infoBoxes = [
-  //   {
-  //     title: 'Noise-cancelling microphones',
-  //     text: 'Noise-cancelling microphones and a rear copper shield are optimally placed to quickly detect outside noises, working together to counter noise before it disturbs your experience.',
-  //     image: 'images/ear-piece.jpg'
-  //   },
-  //   {
-  //     title: 'Comfortable fit',
-  //     text: 'Three pairs of ultra comfortable silicone tips are included. The tips create an acoustic seal that blocks outside audio and secures the earbuds in place.',
-  //     image: 'images/ear-piece.jpg'
-  //   },
-  //   {
-  //     title: '360 AUDIO',
-  //     text: '360 Audio places sound all around you, while Dolby Head Tracking™ technology delivers an incredible three-dimensional listening experience.',
-  //     image: 'images/ear-piece.jpg'
-  //   },
-  //   {
-  //     title: 'Ultra Fast Charging',
-  //     text: 'Charge your earbuds in 30 minutes or less with our hyper charging technology.',
-  //     image: 'images/ear-piece.jpg'
-  //   },
-  // ];
-
-    //This information needs to be removed then pulled with an AJAX Call using the Fetch API
-    //this is the api url https://swiftpixel.com/earbud/api/materials"
-
   const materialListData = [
     {
       heading: "Precision-Crafted Polymers",
@@ -83,7 +54,6 @@ const spinner = `<?xml version="1.0" encoding="utf-8"?>
     //this is the api url https://swiftpixel.com/earbud/api/infoboxes"
 
     function gData() {
-      model.innerHTML=spinner;
 
       fetch ("https://swiftpixel.com/earbud/api/infoboxes")
       .then(response => response.json())
@@ -104,12 +74,12 @@ const spinner = `<?xml version="1.0" encoding="utf-8"?>
         let earbudimage = document.createElement("img");
         earbudimage.src = `images/${_earbudinfo.thumbnail}`;
 
-        model.innerHTML=""
+        
         selectedHotspot.appendChild(earbudimage);
         selectedHotspot.appendChild(earbudText);
         selectedHotspot.appendChild(earbudPText);     
       });
-      modelLoaded();
+    
     })
       .catch((error) => console.error("Oooooopppsss..... your the page did not load",error));
   }
@@ -118,7 +88,7 @@ const spinner = `<?xml version="1.0" encoding="utf-8"?>
 
 
   function loadMaterialInfo() {
-
+    model.innerHTML=spinner;
     // make an AJAX call here
     //this is the api url https://swiftpixel.com/earbud/api/materials"
   //  the forEach loop will go inside a then()/promise
@@ -140,6 +110,7 @@ const spinner = `<?xml version="1.0" encoding="utf-8"?>
 
       // append the populated template to the list
       materialList.appendChild(clone);
+      model.innerHTML=""
     });
     })
   }
